@@ -17,25 +17,7 @@ sap.ui.define([
         },
 
         onOpenDialog : function(){
-            var oView = this.getView();
-            var oDialog = oView.byId("helloDialog");
-            if(!oDialog){
-                Fragment.load({
-                    id : oView.getId(),
-                    name: "sap.ui.demo.walkthrough.view.HelloDialog",
-                    controller : this
-                }).then(function(oDialogNew){
-                    // connect dialog to the root view of this component (models, llifecycle)
-                    oView.addDependent(oDialogNew);
-                    oDialogNew.open();
-                });
-            }else{
-                oDialog.open();
-            }
-        },
-
-        onCloseDialog : function(){
-            this.byId("helloDialog").close();
+            this.getOwnerComponent().openHelloDialog();
         }
     });
 }
