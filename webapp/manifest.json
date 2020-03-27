@@ -60,6 +60,38 @@
                     "uri" : "css/style.css"
                 }
             ]
+        },
+        "routing" : {
+            "config" :{
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "sap.ui.demo.walkthrough.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes" : [
+                {
+                    "pattern" : "",
+                    "name" : "summary",
+                    "target" : "summary"
+                },
+                {
+                    "pattern" : "detail",
+                    "name" : "detail",
+                    "target" : "detail"
+                }
+            ],
+            "targets" : {
+                "summary" : {
+                    "viewId" : "summary",
+                    "viewName" : "Summary"
+                },
+                "detail" : {
+                    "viewId" : "detail",
+                    "viewName" : "Detail"
+                }
+            }
         }
     }
 }
