@@ -4,13 +4,15 @@
     xmlns:mvc="sap.ui.core.mvc">
     <Panel headerText="{i18n>homePanelTitle}"
         class="sapUiResponsiveMargin"
-        width="auto">
+        width="auto"
+        expandable="{device>/system/phone}"
+		expanded="{= !${device>/system/phone} }">
         <content>
             <Button
                 text="{i18n>showHelloWithDialogBtn}"
                 icon="sap-icon://hello-world"
                 press="onOpenDialog"
-                class="sapUiSmallMarginEnd"
+                class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"
             />
             <Button 
                 text="{i18n>showHelloButtonText}" 
