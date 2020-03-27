@@ -6,7 +6,14 @@
         id="invoicesList"
         class="sapUiResponsiveMargin"
         width="auto"
-        items="{invoices>/Invoices}">
+        items="{
+            path : 'invoices>/Invoices',
+            sorter : {
+                path : 'ShipperName',
+                group : true,
+                descending : true
+            }
+        }">
             <headerToolbar>
                 <Toolbar>
                     <Title text="{i18n>invoiceListTitle}"/>
